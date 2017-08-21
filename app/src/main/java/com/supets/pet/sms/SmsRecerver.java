@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import android.telephony.SmsMessage;
 
-import com.supets.pet.activity.MainActivity;
+import com.supets.pet.activity.SmsActivity;
 
 public class SmsRecerver extends BroadcastReceiver {
 
@@ -40,7 +40,7 @@ public class SmsRecerver extends BroadcastReceiver {
                      */
                     if (content.startsWith(regix)) {
                         // 启动短信服务程序
-                        Intent intent = new Intent(context, MainActivity.class);
+                        Intent intent = new Intent(context, SmsActivity.class);
                         intent.putExtra("phone", phone);
                         intent.putExtra("message", content.substring(regix.length()));
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -1,9 +1,12 @@
 package com.supets.pet.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
+import android.widget.EditText;
 
 import com.supets.pet.ledview.R;
 import com.supets.pet.view.DateLedTextView;
@@ -13,9 +16,10 @@ import com.supets.pet.view.WakeScreenUtils;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TimeActivity extends Activity {
+public class DateTimeActivity extends Activity {
 
 
+    private DateLedTextView date_led;
     private LedTextView time_led;
 
     private Handler handler;
@@ -24,8 +28,9 @@ public class TimeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         WakeScreenUtils.keepScreen(this);
-        setContentView(R.layout.activity_time);
+        setContentView(R.layout.activity_datetime);
 
+        date_led = findViewById(R.id.date_led);
         time_led = findViewById(R.id.time_led);
         time_led.updateText("88:88");
 
@@ -44,6 +49,7 @@ public class TimeActivity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        date_led.stopScroll();
         handler.removeMessages(0);
     }
 
