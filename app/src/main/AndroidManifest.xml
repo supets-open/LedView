@@ -29,7 +29,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name="com.supets.pet.activity.MainActivity"
+            android:name="com.supets.pet.activity.TimeActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,7 +37,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name="com.supets.pet.activity.MainActivity"
+            android:screenOrientation="landscape" />
         <!-- 静态注册系统短信广播接收器 -->
         <receiver android:name="com.supets.pet.sms.SmsRecerver">
             <!-- 系统短信广播拦截器 -->
