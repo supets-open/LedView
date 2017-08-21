@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ff000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:orientation="horizontal">
+
+        <com.supets.pet.view.DateLedTextView
+            android:id="@+id/date_led"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Ready Go!!! "
+            app:scroll="true"
+            app:scrollDirection="left"
+            app:speed="normal"
+            app:textColor="#ff0000" />
+
+        <com.supets.pet.view.LedTextView
+            android:id="@+id/time_led"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            app:scroll="false"
+            app:scrollDirection="left"
+            app:speed="normal"
+            app:textColor="#ff00ff" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.supets.pet.view.LedTextView
+            android:id="@+id/scroll_led"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="SMS 消息接收中..."
+            app:scroll="true"
+            app:scrollDirection="left"
+            app:speed="normal"
+            app:textColor="#00ff00" />
+
+        <com.supets.pet.view.LedTextView
+            android:id="@+id/scroll_led1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:text="没有消息！"
+            app:scroll="false"
+            app:scrollDirection="left"
+            app:speed="normal"
+            app:textColor="#ffff00" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入手机号码"
+                android:singleLine="true"
+                android:text="17710247608" />
+
+            <EditText
+                android:id="@+id/msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入消息"
+                android:singleLine="true"
+                android:text="测试新消息!" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="发送" />
+    </LinearLayout>
+
+</LinearLayout>
+
