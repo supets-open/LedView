@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.supets.pet.ledview.R;
+import com.supets.pet.weather.WeatherInfo;
 
 /**
  * LedView
@@ -39,6 +40,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, TimeActivity.class));
+            }
+        });
+        findViewById(R.id.btnWeather).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, WeatherInfoActivity.class));
             }
         });
     }

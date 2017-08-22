@@ -76,7 +76,6 @@ public class SmsActivity extends BaseSmsActivity {
         }
     }
 
-
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);

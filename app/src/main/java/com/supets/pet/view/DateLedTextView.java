@@ -29,7 +29,13 @@ public class DateLedTextView extends LedTextView {
         if (1 == scrollDirection) {
             text = reverseString(text);
         }
-        return  text;
+        return text;
     }
 
-}  
+    @Override
+    public void onScrollEnd() {
+        long s = System.currentTimeMillis();
+        updateCacheMatrix(ChatUtils.convert(changeContent(), getContext()));
+        System.out.println("time:" + (System.currentTimeMillis() - s));
+    }
+}

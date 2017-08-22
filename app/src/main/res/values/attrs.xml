@@ -4,6 +4,7 @@
         <attr name="textColor" format="color" />
         <attr name="spacing" format="dimension" />
         <attr name="scroll" format="boolean" />
+        <attr name="xdots" format="integer" />
 
         <attr name="speed" >
             <enum name="normal" value="0"/>
@@ -13,5 +14,6 @@
             <enum name="left" value="0"/>
             <enum name="right" value="1"/>
         </attr>
+
     </declare-styleable>
 </resources>

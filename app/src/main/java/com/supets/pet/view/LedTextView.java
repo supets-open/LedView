@@ -9,11 +9,10 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import com.supets.pet.ledview.R;
 
-public class LedTextView extends TextView {
+public class LedTextView extends android.support.v7.widget.AppCompatTextView {
 
     private int xdots = 40;//X点数
     private int dots = (int) (xdots * (72f / 128)); //Y点数=行数
@@ -56,7 +55,6 @@ public class LedTextView extends TextView {
     private Handler handler;
     private boolean isCircle = true;
 
-
     public LedTextView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
 
@@ -87,6 +85,9 @@ public class LedTextView extends TextView {
                 case R.styleable.LedTextView_scrollDirection:
                     scrollDirection = typedArray.getInt(R.styleable.LedTextView_scrollDirection, 0);
                     break;
+                case R.styleable.LedTextView_xdots:
+                    xdots = typedArray.getInt(R.styleable.LedTextView_xdots, 40);
+                    break;
             }
         }
         typedArray.recycle();
@@ -116,7 +117,7 @@ public class LedTextView extends TextView {
             }
         });
 
-        if (scroll){
+        if (scroll) {
             startScroll();
         }
 
@@ -166,11 +167,8 @@ public class LedTextView extends TextView {
 
                 if (m == matrix[0].length) {
                     m = 0;
-                    long s = System.currentTimeMillis();
-                    matrix = ChatUtils.convert(changeContent(), getContext());
-                    System.out.println("time:" + (System.currentTimeMillis() - s));
+                    onScrollEnd();
                 }
-                System.out.println("time:" + (m));
                 try {
                     Thread.sleep(sleepTime);
                 } catch (InterruptedException e) {
@@ -190,6 +188,14 @@ public class LedTextView extends TextView {
         }
     }
 
+    public void updateCacheMatrix(boolean[][] matrix) {
+        this.matrix = matrix;
+    }
+
+    //滚动一次结束自动更新数据
+    public void onScrollEnd() {
+
+    }
 
     /**
      * 向左滚动时调用，列循环左移
@@ -320,6 +326,7 @@ public class LedTextView extends TextView {
         }
     }
 
+    //手动更新数据
     public void updateText(String text) {
         this.text = text;
         if (1 == scrollDirection) {
@@ -334,5 +341,16 @@ public class LedTextView extends TextView {
     public String changeContent() {
         return text;
     }
+
+
+    public void ForceupdateText(String text) {
+        this.text = text;
+        if (1 == scrollDirection) {
+            this.text = reverseString(text);
+        }
+        matrix = ChatUtils.convert(this.text, getContext());
+        postInvalidate();
+    }
+
 
 }  
