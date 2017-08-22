@@ -16,7 +16,6 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
 
     private int xdots = 40;//X点数
     private int dots = (int) (xdots * (72f / 128)); //Y点数=行数
-
     private int centeroffset = (dots - 16) / 2;//Y偏移
     private int centerxoffset = (xdots % 8) / 2;//X偏移
 
@@ -87,6 +86,9 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
                     break;
                 case R.styleable.LedTextView_xdots:
                     xdots = typedArray.getInt(R.styleable.LedTextView_xdots, 40);
+                    dots = (int) (xdots * (72f / 128)); //Y点数=行数
+                    centeroffset = (dots - 16) / 2;//Y偏移
+                    centerxoffset = (xdots % 8) / 2;//X偏移
                     break;
             }
         }

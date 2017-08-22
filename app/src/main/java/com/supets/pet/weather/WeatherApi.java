@@ -51,7 +51,7 @@ public class WeatherApi {
                     @Override
                     public void onResponse(String s, int i) {
                         WeatherInfo info = JSonUtil.fromJson(s, WeatherInfo.class);
-                        if (info!=null){
+                        if (info!=null&&info.status==200){
                             callBack.onSuccess(info);
                         }else{
                             callBack.onFaill();
