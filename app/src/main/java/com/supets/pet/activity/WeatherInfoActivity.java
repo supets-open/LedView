@@ -11,9 +11,6 @@ import com.supets.pet.view.WakeScreenUtils;
 import com.supets.pet.weather.WeatherApi;
 import com.supets.pet.weather.WeatherInfo;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 
 public class WeatherInfoActivity extends Activity {
 

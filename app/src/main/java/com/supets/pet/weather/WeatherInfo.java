@@ -23,7 +23,7 @@ public class WeatherInfo {
 
     @Override
     public String toString() {
-        return " 【" + city + "天气】" + data.toString();
+        return " 【" + city + "天气预报】  " + data.toString();
     }
 
     public static class Weather {
