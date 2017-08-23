@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.supets.pet.utils.ShakeEngine;
+import com.supets.pet.sensor.ShakeEngine;
 
 /**
  * LedView

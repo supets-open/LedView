@@ -44,5 +44,23 @@ public class MainActivity extends BaseOrientationActivity {
                 startActivity(new Intent(MainActivity.this, CompassActivity.class));
             }
         });
+        findViewById(R.id.btnSensor2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LevelVialActivity.class));
+            }
+        });
+        findViewById(R.id.btnLed).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RotationLedActivity.class));
+            }
+        });
+        findViewById(R.id.btnlight).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, LightActivity.class));
+            }
+        });
     }
 }

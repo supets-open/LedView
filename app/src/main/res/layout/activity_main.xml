@@ -29,14 +29,6 @@
             android:background="#ff00ff"
             android:text="短消息" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
-
         <Button
             android:id="@+id/btnDateTime"
             android:layout_width="match_parent"
@@ -54,8 +46,9 @@
             android:layout_weight="1"
             android:background="#ff0000"
             android:text="北京天气" />
-
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -69,16 +62,33 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#00ffff"
-            android:text="传感器检测" />
+            android:text="方向传感器-指南针" />
 
         <Button
+            android:id="@+id/btnSensor2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="20dp"
             android:layout_weight="1"
-            android:background="#ff0000"
-            android:text="系统配置" />
+            android:background="#00ffff"
+            android:text="方向传感器-水平仪" />
+        <Button
+            android:id="@+id/btnLed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="方向传感器-旋转LED" />
 
+        <Button
+            android:id="@+id/btnlight"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="光线传感器-测量时间" />
     </LinearLayout>
 
 </LinearLayout>

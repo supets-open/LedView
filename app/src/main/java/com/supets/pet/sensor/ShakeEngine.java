@@ -1,4 +1,4 @@
-package com.supets.pet.utils;
+package com.supets.pet.sensor;
 
 import android.content.Context;
 import android.hardware.Sensor;

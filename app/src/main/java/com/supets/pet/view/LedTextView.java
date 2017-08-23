@@ -204,7 +204,7 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
      *
      * @param matrix
      */
-    private void matrixLeftMove(boolean[][] matrix) {
+    public void matrixLeftMove(boolean[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             boolean tmp = matrix[i][0];
             System.arraycopy(matrix[i], 1, matrix[i], 0, matrix[0].length - 1);
@@ -351,6 +351,11 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
             this.text = reverseString(text);
         }
         matrix = ChatUtils.convert(this.text, getContext());
+        postInvalidate();
+    }
+
+    public void ForceupdateText(boolean[][]  text) {
+        matrix = text;
         postInvalidate();
     }
 
