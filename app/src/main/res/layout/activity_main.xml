@@ -79,7 +79,7 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#00ffff"
-            android:text="方向传感器-旋转LED" />
+            android:text="光线传感器-旋转LED" />
 
         <Button
             android:id="@+id/btnlight"
@@ -88,7 +88,7 @@
             android:layout_margin="20dp"
             android:layout_weight="1"
             android:background="#00ffff"
-            android:text="光线传感器-测量时间" />
+            android:text="光线/距离传感器-测量时间" />
     </LinearLayout>
 
 </LinearLayout>
