@@ -62,5 +62,21 @@ public class MainActivity extends BaseOrientationActivity {
                 startActivity(new Intent(MainActivity.this, LightActivity.class));
             }
         });
+        findViewById(R.id.btnbus).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, BusActivity.class);
+                intent.putExtra("status",true);
+                startActivity(intent);
+            }
+        });
+        findViewById(R.id.btnbus2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(MainActivity.this, BusActivity.class);
+                intent.putExtra("status",false);
+                startActivity(intent);
+            }
+        });
     }
 }

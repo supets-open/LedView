@@ -46,6 +46,7 @@
             android:layout_weight="1"
             android:background="#ff0000"
             android:text="北京天气" />
+
     </LinearLayout>
 
 
@@ -72,6 +73,7 @@
             android:layout_weight="1"
             android:background="#00ffff"
             android:text="方向传感器-水平仪" />
+
         <Button
             android:id="@+id/btnLed"
             android:layout_width="match_parent"
@@ -89,6 +91,24 @@
             android:layout_weight="1"
             android:background="#00ffff"
             android:text="光线/距离传感器-测量时间" />
+
+        <Button
+            android:id="@+id/btnbus2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="428公交线路-天通北苑" />
+
+        <Button
+            android:id="@+id/btnbus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="428公交线路-龙泽地铁" />
     </LinearLayout>
 
 </LinearLayout>
