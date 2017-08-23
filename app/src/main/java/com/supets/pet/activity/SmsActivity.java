@@ -72,7 +72,7 @@ public class SmsActivity extends BaseSmsActivity {
         String phone = intent.getStringExtra("phone");
         if (message != null) {
             scroll_led1.updateText("from:" + phone);
-            scroll_led.updateText(message);
+            scroll_led.ForceupdateText(message);
         }
     }
 
