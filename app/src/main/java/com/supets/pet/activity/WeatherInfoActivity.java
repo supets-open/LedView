@@ -35,7 +35,7 @@ public class WeatherInfoActivity extends Activity {
 
             @Override
             public void onFaill() {
-                time_led.updateText("-->获取失败！");
+                time_led.ForceupdateText("-->获取失败！");
             }
         });
     }

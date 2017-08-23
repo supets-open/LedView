@@ -48,6 +48,9 @@
             android:name="com.supets.pet.activity.WeatherInfoActivity"
             android:screenOrientation="landscape" />
         <activity
+            android:name="com.supets.pet.activity.CompassActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name="com.supets.pet.activity.DateTimeActivity"
             android:screenOrientation="landscape" />
         <!-- 静态注册系统短信广播接收器 -->

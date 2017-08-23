@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">点阵时钟</string>
+    <string name="shake_not_support_sensor"><![CDATA[<string name=\"sha此设备不支持重力传感器]]></string>
 </resources>
