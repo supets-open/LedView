@@ -46,7 +46,23 @@
             android:layout_weight="1"
             android:background="#ff0000"
             android:text="北京天气" />
+        <Button
+            android:id="@+id/btnSensor2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="方向传感器-水平仪" />
 
+        <Button
+            android:id="@+id/btnLed"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            android:background="#00ffff"
+            android:text="光线传感器-旋转LED" />
     </LinearLayout>
 
 
@@ -65,23 +81,7 @@
             android:background="#00ffff"
             android:text="方向传感器-指南针" />
 
-        <Button
-            android:id="@+id/btnSensor2"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
-            android:background="#00ffff"
-            android:text="方向传感器-水平仪" />
 
-        <Button
-            android:id="@+id/btnLed"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_margin="20dp"
-            android:layout_weight="1"
-            android:background="#00ffff"
-            android:text="光线传感器-旋转LED" />
 
         <Button
             android:id="@+id/btnlight"

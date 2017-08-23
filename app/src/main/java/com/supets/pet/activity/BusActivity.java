@@ -14,6 +14,7 @@ import java.util.List;
 
 public class BusActivity extends Activity {
 
+
     LedTextView time_led;
 
     @Override
@@ -23,8 +24,9 @@ public class BusActivity extends Activity {
 
         boolean isDitie = getIntent().getBooleanExtra("status", true);
 
-        String url = isDitie ? "http://map.baidu.com/mobile/webapp/search/search#place/detail/qt=s&wd=428&c=131&searchFlag=bigBox&version=5&exptype=dep&src_from=webapp_all_bigbox&sug_forward=&src=0&uid=229abe20df4728442ad7ab79/i=0&showall=1&pos=0&da_ref=listclk&da_qrtp=11&detail_from=list" :
-                "http://map.baidu.com/mobile/webapp/search/search#place/detail/qt=s&wd=428&c=131&searchFlag=bigBox&version=5&exptype=dep&src_from=webapp_all_bigbox&sug_forward=&src=0&uid=bbca8d0458ee9582601c67b7/i=1&showall=1&pos=1&da_ref=listclk&da_qrtp=11&detail_from=list";
+        String url = isDitie ?
+                "http://map.baidu.com/mobile/webapp/search/search/qt=inf&uid=229abe20df4728442ad7ab79/?third_party=webapp-aladdin" :
+                "http://map.baidu.com/mobile/webapp/search/search/qt=inf&uid=bbca8d0458ee9582601c67b7/?third_party=webapp-aladdin";
         time_led = findViewById(R.id.time_led);
         time_led.startScroll();
         requestData(url);
