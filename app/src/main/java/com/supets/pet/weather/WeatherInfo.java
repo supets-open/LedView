@@ -41,16 +41,17 @@ public class WeatherInfo {
 
         @Override
         public String toString() {
-            return
-                    forecast.get(0).date + " "
-                            + forecast.get(0).type
-                            + " 温度:" + wendu
-                            + " pm2.5:" + pm25
-                            + " 湿度:" + shidu
-                            + " " + forecast.get(0).fx + forecast.get(0).fl
-                            + " 户外:" + ganmao
-                            + " 注意:" + forecast.get(0).notice
-                    ;
+            String data = " 温度:" + wendu
+                    + " pm2.5:" + pm25
+                    + " 湿度:" + shidu;
+            for (WeatherDay temp : forecast
+                    ) {
+                data += (temp.date + " "
+                        + temp.type
+                        + " " + temp.fx + temp.fl);
+            }
+            return data;
+
         }
     }
 
