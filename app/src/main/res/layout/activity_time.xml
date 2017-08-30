@@ -6,6 +6,11 @@
     android:background="#ff000000"
     android:orientation="vertical">
 
+    <com.supets.pet.lcd.LCD1602A
+        app:textColor="#ff0000"
+        android:layout_width="match_parent"
+        android:layout_height="96dp" />
+
     <com.supets.pet.view.LedTextView
         android:id="@+id/time_led"
         android:layout_width="match_parent"
