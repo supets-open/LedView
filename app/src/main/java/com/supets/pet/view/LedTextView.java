@@ -12,6 +12,8 @@ import android.util.AttributeSet;
 
 import com.supets.pet.ledview.R;
 
+import java.util.Random;
+
 public class LedTextView extends android.support.v7.widget.AppCompatTextView {
 
     private int xdots = 40;//X点数
@@ -90,6 +92,9 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
                     centeroffset = (dots - 16) / 2;//Y偏移
                     centerxoffset = (xdots % 8) / 2;//X偏移
                     break;
+                case R.styleable.LedTextView_dotcolormode:
+                    mode = typedArray.getInt(R.styleable.LedTextView_dotcolormode, 1);
+                    break;
             }
         }
         typedArray.recycle();
@@ -97,6 +102,10 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
         selectPaint.setStyle(Paint.Style.FILL);
         selectPaint.setColor(paintColor);
 
+        //随机色
+        if (mode==2) {
+            selectPaint.setColor(Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1)));
+        }
         normalPaint = new Paint();
         normalPaint.setStyle(Paint.Style.STROKE);
         normalPaint.setColor(Color.BLACK);
@@ -123,7 +132,14 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
             startScroll();
         }
 
+        color[0]=  Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1));
+        color[1]=  Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1));
+        color[2]=  Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1));
+        color[3]=  Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1));
+        color[4]=  Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1));
     }
+
+    private int[] color=new int[5];
 
     public void startScroll() {
         scrollText = true;
@@ -238,14 +254,21 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
 
     private void drawText(Canvas canvas, int xoffset, int yoffset, boolean[][] matrix) {
         radius = (getHeight() - (dots + 1) * spacing) / (2 * dots);
-        // 行  
+        //随机色
+        if (mode==5) {
+            selectPaint.setColor(Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1)));
+        }
+        // 行
         int row = 0;
         // 列  
         int column = 0;
         while (getYPosition(row, yoffset) < getHeight()) {
             while (getXPosition(column, xoffset) < getWidth()) {
-                // just draw  
                 if (row < matrix.length && column < matrix[0].length && matrix[row][column]) {
+                    //随机色
+                    if (mode==3) {
+                        selectPaint.setColor(Color.rgb((int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1), (int) (Math.random() * 255 + 1)));
+                    }
                     if (isCircle) {
                         canvas.drawCircle(getXPosition(column, xoffset), getYPosition(row, yoffset), radius, selectPaint);
                     } else {
@@ -359,5 +382,11 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
         postInvalidate();
     }
 
+
+    private int  mode=1;//1 固定色  2 随机色 3 随机点色 4 随机数字 5 每次随机色
+
+    public void setColorMode(int mode){
+        this.mode=mode;
+    }
 
 }  

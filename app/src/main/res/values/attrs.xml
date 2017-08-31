@@ -5,6 +5,7 @@
         <attr name="spacing" format="dimension" />
         <attr name="scroll" format="boolean" />
         <attr name="xdots" format="integer" />
+        <attr name="dotcolormode" format="integer" />
 
         <attr name="speed" >
             <enum name="normal" value="0"/>
