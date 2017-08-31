@@ -1,7 +1,6 @@
-package com.supets.pet.activity;
+package com.supets.pet.module.sensor;
 
 import android.app.Activity;
-import android.graphics.ImageFormat;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.supets.pet.ledview.R;
-import com.supets.pet.sensor.LevelVialView;
 import com.supets.pet.sensor.ledPref;
 import com.supets.pet.view.LedTextView;
 

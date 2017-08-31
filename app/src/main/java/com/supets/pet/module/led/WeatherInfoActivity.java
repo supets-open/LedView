@@ -1,9 +1,7 @@
-package com.supets.pet.activity;
+package com.supets.pet.module.led;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 
 import com.supets.pet.ledview.R;
 import com.supets.pet.view.LedTextView;

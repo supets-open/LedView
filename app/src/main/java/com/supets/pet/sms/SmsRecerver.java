@@ -8,7 +8,7 @@ import android.os.Bundle;
 
 import android.telephony.SmsMessage;
 
-import com.supets.pet.activity.SmsActivity;
+import com.supets.pet.module.led.SmsActivity;
 
 public class SmsRecerver extends BroadcastReceiver {
 

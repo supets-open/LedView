@@ -1,26 +1,33 @@
-package com.supets.pet.activity;
+package com.supets.pet.module;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.supets.pet.ledview.R;
+import com.supets.pet.module.led.BusActivity;
+import com.supets.pet.module.led.DateTimeActivity;
+import com.supets.pet.module.led.LCD1602Activity;
+import com.supets.pet.module.led.MainAdapter;
+import com.supets.pet.module.led.SmsActivity;
+import com.supets.pet.module.led.TimeActivity;
+import com.supets.pet.module.led.WeatherInfoActivity;
+import com.supets.pet.module.sensor.BaseOrientationActivity;
+import com.supets.pet.module.sensor.CompassActivity;
+import com.supets.pet.module.sensor.LevelVialActivity;
+import com.supets.pet.module.sensor.LightActivity;
+import com.supets.pet.module.sensor.RotationLedActivity;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends BaseOrientationActivity {
 
-    MainAdapter adapter;
-    ListView listView;
+    private MainAdapter adapter;
+    private ListView listView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,6 +51,8 @@ public class MainActivity extends BaseOrientationActivity {
         d.add("428公交线路-天通北苑");
         d.add("428公交线路-龙泽地铁");
 
+        d.add("LCD1602A");
+
         adapter.setData(d);
 
         listView.setAdapter(adapter);
@@ -60,7 +69,7 @@ public class MainActivity extends BaseOrientationActivity {
     }
 
     private void doWithButton(int position) {
-        switch (position) {
+        switch (position + 1) {
             case 1:
                 startActivity(new Intent(MainActivity.this, TimeActivity.class));
                 break;
@@ -97,48 +106,15 @@ public class MainActivity extends BaseOrientationActivity {
                 startActivity(intent);
             }
             break;
+            case 11: {
+                Intent intent = new Intent(MainActivity.this, LCD1602Activity.class);
+                startActivity(intent);
+            }
+            break;
             default:
                 break;
         }
     }
 
-
-    public class MainAdapter extends BaseAdapter {
-
-        private ArrayList<String> data = new ArrayList<>();
-
-        public void setData(ArrayList<String> data) {
-            if (data != null) {
-                this.data.addAll(data);
-            }
-        }
-
-        @Override
-        public int getCount() {
-            return data.size();
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return data.get(i);
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return i;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-
-            if (view == null) {
-                view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.listitem, viewGroup, false);
-            }
-
-            TextView name = view.findViewById(R.id.text);
-            name.setText(data.get(i));
-            return view;
-        }
-    }
 
 }

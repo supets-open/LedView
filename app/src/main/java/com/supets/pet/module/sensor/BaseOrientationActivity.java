@@ -1,4 +1,4 @@
-package com.supets.pet.activity;
+package com.supets.pet.module.sensor;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,13 +6,9 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.util.Log;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
 
 import java.util.List;
 

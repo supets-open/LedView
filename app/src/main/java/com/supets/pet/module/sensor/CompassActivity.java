@@ -1,4 +1,4 @@
-package com.supets.pet.activity;
+package com.supets.pet.module.sensor;
 
 import android.os.Bundle;
 import android.util.Log;

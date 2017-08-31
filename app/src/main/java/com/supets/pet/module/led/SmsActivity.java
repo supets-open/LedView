@@ -1,4 +1,4 @@
-package com.supets.pet.activity;
+package com.supets.pet.module.led;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.supets.pet.ledview.R;
+import com.supets.pet.module.sensor.BaseSmsActivity;
 import com.supets.pet.view.DateLedTextView;
 import com.supets.pet.view.LedTextView;
 
