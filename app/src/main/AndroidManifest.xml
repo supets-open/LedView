@@ -65,6 +65,9 @@
         <activity
             android:name="com.supets.pet.activity.LightActivity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="com.supets.pet.activity.LCD1602Activity"
+            android:screenOrientation="landscape" />
         <!-- 静态注册系统短信广播接收器 -->
         <receiver android:name="com.supets.pet.sms.SmsRecerver">
             <!-- 系统短信广播拦截器 -->

@@ -5,14 +5,18 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 
 import com.supets.pet.ledview.R;
 
 public class LCD1602A extends android.support.v7.widget.AppCompatTextView {
 
-    private int dots = 32; //Y点数=行数
+
+    private static  final int HANG=2;
+    private static final int FONT_WIDTH=8;
+    private static final int FONT_HEIGHT=16;
+
+    private int dots = FONT_HEIGHT*HANG; //行数
     private float spacing = 0;//点阵之间的距离
     private float radius;//点阵中点的半径
 
@@ -23,7 +27,7 @@ public class LCD1602A extends android.support.v7.widget.AppCompatTextView {
 
     private int paintColor = Color.GREEN;
 
-    private ZiMo[][] ddram = new ZiMo[2][2];
+    private ZiMo[][] ddram = new ZiMo[2][16];
 
     public LCD1602A(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
@@ -48,16 +52,6 @@ public class LCD1602A extends android.support.v7.widget.AppCompatTextView {
         normalPaint = new Paint();
         normalPaint.setStyle(Paint.Style.STROKE);
         normalPaint.setColor(Color.BLACK);
-
-        text = getText().toString();
-        if (TextUtils.isEmpty(text)) {
-            text = "Welcome To You！";
-        }
-
-        ddram[0][0] = new ZiMo(ZiMoUtuls.convert(text,getContext()));
-        ddram[1][0] = new ZiMo(ZiMoUtuls.convert("A", getContext()));
-        ddram[1][1] = new ZiMo(ZiMoUtuls.convert("B", getContext()));
-
     }
 
 
@@ -71,8 +65,9 @@ public class LCD1602A extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(getDefaultSize(getSuggestedMinimumWidth(), widthMeasureSpec),
-                getDefaultSize(getSuggestedMinimumHeight(), heightMeasureSpec));
+        super.onMeasure(widthMeasureSpec,heightMeasureSpec);
+        int width=MeasureSpec.getSize(widthMeasureSpec);
+        setMeasuredDimension(width, (int) (width*(128/32f)));
     }
 
     private void drawText(Canvas canvas, int xoffset, int yoffset, RGB[][] matrix) {
@@ -104,17 +99,36 @@ public class LCD1602A extends android.support.v7.widget.AppCompatTextView {
 
     @Override
     protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
         for (int i = 0; i < ddram.length; i++) {
-            for (int j = 0; j <ddram[0].length; j++) {
+            for (int j = 0; j < ddram[0].length; j++) {
                 ZiMo ziMo = ddram[i][j];
                 if (ziMo != null && ziMo.pdata != null) {
-                    drawText(canvas, j*8, 16 * i, ziMo.pdata);
+                    drawText(canvas, j * FONT_WIDTH, FONT_HEIGHT * i, ziMo.pdata);
                 }
             }
         }
     }
 
 
-    public  void  setRam(int line,int column,String str){}
+    /**
+     * 穿入传入单个字符
+     *
+     * @param line
+     * @param column
+     * @param str
+     */
+    public void setRam(int line, int column, String str) {
+
+        if (line > 2 || column > 16 || column < 1 || line < 1) {
+            return;
+        }
+        ddram[line - 1][column - 1] = new ZiMo(ZiMoUtuls.convert(str, getContext()));
+
+    }
+
+    public void refreshView() {
+        postInvalidate();
+    }
 
 }
