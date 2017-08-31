@@ -26,24 +26,24 @@ public class MainAdapter extends BaseAdapter {
     }
 
     @Override
-    public Object getItem(int i) {
-        return data.get(i);
+    public Object getItem(int position) {
+        return data.get(position);
     }
 
     @Override
-    public long getItemId(int i) {
-        return i;
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(int position, View view, ViewGroup viewGroup) {
 
         if (view == null) {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.listitem, viewGroup, false);
         }
 
         TextView name = view.findViewById(R.id.text);
-        name.setText(data.get(i));
+        name.setText(position+1+" "+data.get(position));
         return view;
     }
 }
