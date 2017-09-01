@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">点阵时钟</string>
     <string name="shake_not_support_sensor"><![CDATA[<string name=\"sha此设备不支持重力传感器]]></string>
+    <string name="str_text1">圆形</string>
+    <string name="str_text2">正方形</string>
+    <string name="str_text3">长方形</string>
+    <string name="str_text4">椭圆形</string>
+    <string name="str_text5">三角形</string>
+    <string name="str_text6">梯形</string>
 </resources>

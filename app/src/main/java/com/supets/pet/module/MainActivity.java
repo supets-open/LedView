@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.supets.pet.bcd.GraphicesActivity;
 import com.supets.pet.ledview.R;
 import com.supets.pet.module.led.BusActivity;
 import com.supets.pet.module.led.DateTimeActivity;
@@ -54,6 +55,8 @@ public class MainActivity extends BaseOrientationActivity {
 
         d.add("LCD1602A");
         d.add("数字电路功能模拟");
+
+        d.add("画不同形状");
 
         adapter.setData(d);
 
@@ -115,6 +118,11 @@ public class MainActivity extends BaseOrientationActivity {
             break;
             case 12: {
                 Intent intent = new Intent(MainActivity.this, D74Activity.class);
+                startActivity(intent);
+            }
+            break;
+            case 13: {
+                Intent intent = new Intent(MainActivity.this, GraphicesActivity.class);
                 startActivity(intent);
             }
             break;

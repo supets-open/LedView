@@ -74,6 +74,9 @@
             android:name="com.supets.pet.module.led.LCD1602Activity"
             android:screenOrientation="landscape" />
         <activity
+            android:name="com.supets.pet.bcd.GraphicesActivity"
+            android:screenOrientation="landscape" />
+        <activity
             android:name="com.supets.pet.module.ttl.D74Activity"
             android:screenOrientation="portrait" />
         <activity
