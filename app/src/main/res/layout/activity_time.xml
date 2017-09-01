@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:scroll="false"
-        app:dotcolormode="2"
-        app:textColor="#ff0000" />
+        app:dotcolormode="1"
+        app:textColor="#ffffff" />
 
 </LinearLayout>
 

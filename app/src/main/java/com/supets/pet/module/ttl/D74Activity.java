@@ -60,6 +60,11 @@ public class D74Activity extends BaseOrientationActivity {
                 startActivity(intent);
             }
             break;
+            case 7400: {
+                Intent intent = new Intent(D74Activity.this, D7400Activity.class);
+                startActivity(intent);
+            }
+            break;
             default:
                 break;
         }
