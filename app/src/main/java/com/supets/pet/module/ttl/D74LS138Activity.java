@@ -60,7 +60,7 @@ public class D74LS138Activity extends Activity implements D74LS138.OutputResultC
     @Override
     public void resultCallBack(int input) {
         String  data="";
-        for (int i=0;i<8;i++){
+        for (int i=7;i>=0;i--){
             if (i==input){
                 data+="1";
             }else{

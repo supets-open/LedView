@@ -26,9 +26,9 @@ public class D74LS151Activity extends Activity implements  View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_74151);
 
-        mSelector.setInputData(0, "线路1");
-        mSelector.setInputData(0, "线路2");
-        mSelector.setInputData(0, "线路3");
+        mSelector.setInputData(0, "输出D0数据");
+        mSelector.setInputData(1, "输出D1数据");
+        mSelector.setInputData(2, "输出D2数据");
 
         mSelector.setEnable(true);
 

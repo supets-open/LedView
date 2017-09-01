@@ -17,19 +17,19 @@
         android:id="@+id/btn0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="得到线路1数据" />
+        android:text="输入控制码000，输出D0数据" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="得到线路2数据" />
+        android:text="输入控制码001，输出D1数据" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="得到线路3数据" />
+        android:text="输入控制码010，输出D2数据" />
 
     <TextView
         android:id="@+id/result"
