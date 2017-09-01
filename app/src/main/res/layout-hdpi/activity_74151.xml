@@ -22,17 +22,14 @@
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
         android:gravity="center"
+        android:background="#999999"
         android:textColor="#00ff00"
-        android:textSize="30sp" />
+        android:textSize="40sp" />
 
     <CheckBox
         android:id="@+id/enable"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content"
         android:checked="true"
         android:gravity="left"
         android:text="使能控制"
@@ -41,31 +38,19 @@
     <Button
         android:id="@+id/btn0"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content"
         android:text="输入控制码000，输出D0数据" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content"
         android:text="输入控制码001，输出D1数据" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="0dp"
+        android:layout_height="wrap_content"
         android:text="输入控制码010，输出D2数据" />
 
 </LinearLayout>

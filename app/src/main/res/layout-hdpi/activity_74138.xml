@@ -22,31 +22,35 @@
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="30dp"
+        android:background="#999999"
         android:gravity="center"
         android:textColor="#00ff00"
-        android:textSize="30sp" />
+        android:textSize="40sp" />
+
     <CheckBox
         android:id="@+id/enable"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:checked="true"
         android:text="使能控制"
-        android:textSize="15sp"
-        android:layout_height="wrap_content" />
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/btn0"
         android:layout_width="match_parent"
-        android:text="输入000"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="输入000" />
+
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
-        android:text="输入001"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="输入001" />
+
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
-        android:text="输入010"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="输入010" />
 
 </LinearLayout>
