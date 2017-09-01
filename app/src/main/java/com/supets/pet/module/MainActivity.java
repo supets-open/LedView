@@ -20,6 +20,7 @@ import com.supets.pet.module.sensor.CompassActivity;
 import com.supets.pet.module.sensor.LevelVialActivity;
 import com.supets.pet.module.sensor.LightActivity;
 import com.supets.pet.module.sensor.RotationLedActivity;
+import com.supets.pet.module.ttl.D74Activity;
 import com.supets.pet.module.ttl.D74LS138Activity;
 import com.supets.pet.module.ttl.D74LS151Activity;
 
@@ -54,9 +55,7 @@ public class MainActivity extends BaseOrientationActivity {
         d.add("428公交线路-龙泽地铁");
 
         d.add("LCD1602A");
-
-        d.add("74LS138译码器");
-        d.add("74LS151数据选择器");
+        d.add("数字电路功能模拟");
 
         adapter.setData(d);
 
@@ -117,12 +116,7 @@ public class MainActivity extends BaseOrientationActivity {
             }
             break;
             case 12: {
-                Intent intent = new Intent(MainActivity.this, D74LS138Activity.class);
-                startActivity(intent);
-            }
-            break;
-            case 13: {
-                Intent intent = new Intent(MainActivity.this, D74LS151Activity.class);
+                Intent intent = new Intent(MainActivity.this, D74Activity.class);
                 startActivity(intent);
             }
             break;

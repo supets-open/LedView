@@ -10,7 +10,7 @@
         android:layout_height="48dp"
         android:background="#2fd4fd"
         android:gravity="center"
-        android:text="74138功能模拟"
+        android:text="74138"
         android:textSize="15sp" />
 
 
@@ -25,7 +25,7 @@
         android:background="#999999"
         android:gravity="center"
         android:textColor="#00ff00"
-        android:textSize="40sp" />
+        android:textSize="30sp" />
 
     <CheckBox
         android:id="@+id/enable"
@@ -39,18 +39,18 @@
         android:id="@+id/btn0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="输入000" />
+        android:text="输入控制码 000" />
 
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="输入001" />
+        android:text="输入控制码 001" />
 
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="输入010" />
+        android:text="输入控制码 010" />
 
 </LinearLayout>

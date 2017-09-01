@@ -67,7 +67,7 @@ public class D74LS138Activity extends Activity implements D74LS138.OutputResultC
                 data+="0";
             }
         }
-        result.setText("输出D7-D0:"+data);
+        result.setText("D7~D0:"+data);
     }
 
     @Override
