@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <color name="bcd_backcolor">#b9bda6</color>
+    <color name="bcd_color">#423e55</color>
 </resources>
