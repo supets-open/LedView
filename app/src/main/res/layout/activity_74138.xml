@@ -16,17 +16,17 @@
     <Button
         android:id="@+id/btn0"
         android:layout_width="match_parent"
-        android:text="输入0"
+        android:text="输入000"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn1"
         android:layout_width="match_parent"
-        android:text="输入1"
+        android:text="输入001"
         android:layout_height="wrap_content" />
     <Button
         android:id="@+id/btn2"
         android:layout_width="match_parent"
-        android:text="输入2"
+        android:text="输入010"
         android:layout_height="wrap_content" />
 
     <TextView

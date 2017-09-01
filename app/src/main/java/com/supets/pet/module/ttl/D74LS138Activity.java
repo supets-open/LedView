@@ -55,25 +55,29 @@ public class D74LS138Activity extends Activity implements D74LS138.OutputResultC
                 mSelector.setEnable(enable.isChecked());
             }
         });
-
     }
 
     @Override
     public void resultCallBack(int input) {
-        result.setText("输出事件" + input);
+        String  data="";
+        for (int i=0;i<8;i++){
+            if (i==input){
+                data+="1";
+            }else{
+                data+="0";
+            }
+        }
+        result.setText("输出D7-D0:"+data);
     }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btn0) {
             mSelector.setInput(0);
-            Log.v("74ls138", "click事件0");
         } else if (view.getId() == R.id.btn1) {
             mSelector.setInput(1);
-            Log.v("74ls138", "click事件1");
         } else if (view.getId() == R.id.btn2) {
             mSelector.setInput(2);
-            Log.v("74ls138", "click事件2");
         }
     }
 
