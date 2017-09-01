@@ -40,13 +40,16 @@
         </activity>
         <activity
             android:name="com.supets.pet.module.led.SmsActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.led.TimeActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.led.WeatherInfoActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.sensor.CompassActivity"
             android:screenOrientation="portrait" />
@@ -58,16 +61,24 @@
             android:screenOrientation="portrait" />
         <activity
             android:name="com.supets.pet.module.led.DateTimeActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.led.BusActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.sensor.LightActivity"
             android:screenOrientation="landscape" />
         <activity
             android:name="com.supets.pet.module.led.LCD1602Activity"
             android:screenOrientation="landscape" />
+        <activity
+            android:name="com.supets.pet.module.ttl.D74LS138Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.supets.pet.module.ttl.D74LS151Activity"
+            android:screenOrientation="portrait" />
         <!-- 静态注册系统短信广播接收器 -->
         <receiver android:name="com.supets.pet.sms.SmsRecerver">
             <!-- 系统短信广播拦截器 -->
