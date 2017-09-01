@@ -3,33 +3,36 @@ package com.supets.pet.module.ttl;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
-import com.supets.pet.lcd.D74LS138;
-import com.supets.pet.lcd.D74LS151;
 import com.supets.pet.ledview.R;
 
+/**
+ * LedView
+ *
+ * @user lihongjiang
+ * @description
+ * @date 2017/9/1
+ * @updatetime 2017/9/1
+ */
 
-
-public class D74LS151Activity extends Activity implements  View.OnClickListener {
+public class D74138Activity extends Activity implements D74138.OutputResultCallBack, View.OnClickListener {
 
     private TextView result;
     private CheckBox enable;
 
-    private D74LS151 mSelector = new D74LS151();
+    private D74138 mSelector = new D74138();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_74151);
+        setContentView(R.layout.activity_74138);
 
-        mSelector.setInputData(0, "输出D0数据");
-        mSelector.setInputData(1, "输出D1数据");
-        mSelector.setInputData(2, "输出D2数据");
-
+        mSelector.setOutPutResult(0, this);
+        mSelector.setOutPutResult(1, this);
+        mSelector.setOutPutResult(2, this);
         mSelector.setEnable(true);
 
         result = findViewById(R.id.result);
@@ -50,22 +53,36 @@ public class D74LS151Activity extends Activity implements  View.OnClickListener 
                 mSelector.setEnable(enable.isChecked());
             }
         });
-
     }
 
+    @Override
+    public void resultCallBack(int input) {
+        String  data="";
+        for (int i=7;i>=0;i--){
+            if (i==input){
+                data+="1";
+            }else{
+                data+="0";
+            }
+        }
+        result.setText("D7~D0:"+data);
+    }
 
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.btn0) {
-            mSelector.setChannel(0);
-            result.setText(mSelector.getResult());
+            mSelector.setInput(0);
         } else if (view.getId() == R.id.btn1) {
-            mSelector.setChannel(1);
-            result.setText(mSelector.getResult());
+            mSelector.setInput(1);
         } else if (view.getId() == R.id.btn2) {
-            mSelector.setChannel(2);
-            result.setText(mSelector.getResult());
+            mSelector.setInput(2);
         }
     }
 
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mSelector.onDestroy();
+    }
 }

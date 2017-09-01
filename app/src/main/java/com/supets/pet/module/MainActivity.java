@@ -21,8 +21,6 @@ import com.supets.pet.module.sensor.LevelVialActivity;
 import com.supets.pet.module.sensor.LightActivity;
 import com.supets.pet.module.sensor.RotationLedActivity;
 import com.supets.pet.module.ttl.D74Activity;
-import com.supets.pet.module.ttl.D74LS138Activity;
-import com.supets.pet.module.ttl.D74LS151Activity;
 
 import java.util.ArrayList;
 

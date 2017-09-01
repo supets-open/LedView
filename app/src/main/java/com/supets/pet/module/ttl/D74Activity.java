@@ -25,15 +25,16 @@ public class D74Activity extends BaseOrientationActivity {
         setContentView(R.layout.activity_main);
 
         TextView title = findViewById(R.id.title);
-        title.setText("74系列数字电路功能Java版");
+        title.setText("模拟74系列数字电路");
 
         listView = findViewById(R.id.list);
         adapter = new D74Adapter();
         ArrayList<D74> d = new ArrayList<>();
+        d.add(new D74(7400, "7400", "2输入端四与非门"));
         d.add(new D74(74138, "74138", "3-8线译码器/复工器"));
         d.add(new D74(74151, "74151", "8选1数据选择器"));
-        adapter.setData(d);
 
+        adapter.setData(d);
         listView.setAdapter(adapter);
 
 
@@ -50,12 +51,12 @@ public class D74Activity extends BaseOrientationActivity {
     private void doWithButton(D74 data) {
         switch (data.type) {
             case 74138: {
-                Intent intent = new Intent(D74Activity.this, D74LS138Activity.class);
+                Intent intent = new Intent(D74Activity.this, D74138Activity.class);
                 startActivity(intent);
             }
             break;
             case 74151: {
-                Intent intent = new Intent(D74Activity.this, D74LS151Activity.class);
+                Intent intent = new Intent(D74Activity.this, D74151Activity.class);
                 startActivity(intent);
             }
             break;

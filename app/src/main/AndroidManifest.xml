@@ -77,10 +77,10 @@
             android:name="com.supets.pet.module.ttl.D74Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.supets.pet.module.ttl.D74LS138Activity"
+            android:name="com.supets.pet.module.ttl.D74138Activity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.supets.pet.module.ttl.D74LS151Activity"
+            android:name="com.supets.pet.module.ttl.D74151Activity"
             android:screenOrientation="portrait" />
         <!-- 静态注册系统短信广播接收器 -->
         <receiver android:name="com.supets.pet.sms.SmsRecerver">

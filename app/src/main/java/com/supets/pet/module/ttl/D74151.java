@@ -1,4 +1,4 @@
-package com.supets.pet.lcd;
+package com.supets.pet.module.ttl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * java实现----------数据选择器功能
  */
-public class D74LS151 {
+public class D74151 {
 
     private boolean enable = false;
     private int channel = 0;

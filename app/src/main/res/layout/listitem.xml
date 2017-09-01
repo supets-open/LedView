@@ -13,5 +13,5 @@
         android:background="#ffffff"
         android:gravity="left"
         android:padding="5dp"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 </LinearLayout>
