@@ -5,6 +5,26 @@
     android:orientation="vertical">
 
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#2fd4fd"
+        android:gravity="center"
+        android:text="74138功能模拟"
+        android:textSize="15sp" />
+
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:textColor="#00ff00"
+        android:textSize="30sp" />
     <CheckBox
         android:id="@+id/enable"
         android:layout_width="match_parent"
@@ -27,11 +47,6 @@
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:text="输入010"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/result"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>
