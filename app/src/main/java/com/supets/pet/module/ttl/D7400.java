@@ -45,6 +45,14 @@ public class D7400 implements Runnable {
         }
     }
 
+    public boolean getPinA() {
+        return pinA;
+    }
+
+    public boolean getPinB() {
+        return pinB;
+    }
+
     interface D7400CallBack {
         void outputY(boolean y);
     }

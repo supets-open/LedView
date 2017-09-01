@@ -44,6 +44,8 @@ public class D7400Activity extends Activity implements D7400.D7400CallBack, View
 
     @Override
     public void outputY(boolean y) {
-        result.setText("输出Y:" + (y ? 1 : 0));
+        result.setText("A=" + (mSelector.getPinA() ? 1 : 0)
+                + " B=" + (mSelector.getPinB() ? 1 : 0)
+                + " Y=" + (y ? 1 : 0));
     }
 }
