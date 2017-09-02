@@ -75,7 +75,8 @@
             android:screenOrientation="landscape" />
         <activity
             android:name="com.supets.pet.bcd.GraphicesActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen" />
         <activity
             android:name="com.supets.pet.module.ttl.D74Activity"
             android:screenOrientation="portrait" />
