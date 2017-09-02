@@ -20,7 +20,7 @@ import java.util.Date;
 public class MyView2 extends View {
 
 
-    private int fontcolor = getContext().getResources().getColor(R.color.bcd_color);
+    private int fontcolor = getContext().getResources().getColor(R.color.red);
     private int fontbackcolor = getContext().getResources().getColor(R.color.bcd_backcolor);
 
 
