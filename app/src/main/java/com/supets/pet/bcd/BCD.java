@@ -46,12 +46,12 @@ public class BCD {
         int w = width / 11;
         int h = width / 44;
 
-        paths[0] = getHBCD(w, h, x0 + h, y0 + h / 2);//A
-        paths[3] = getHBCD(w, h, x0 + h, y0 +w+h+w+h+ h / 2);//D
-        paths[6] = getHBCD(w, h, x0 + h, y0 + h / 2 + w + h);//G
+        paths[0] = getHBCD(w, h, x0 + h/2, y0 + h / 2);//A
+        paths[3] = getHBCD(w, h, x0 + h/2, y0 +w+h+w+h+ h / 2);//D
+        paths[6] = getHBCD(w, h, x0 + h/2, y0 + h / 2 + w + h);//G
 
-        paths[1] = getLBCD(w, h, x0 + h + w + h / 2, y0 + h);//B
-        paths[2] = getLBCD(w, h, x0 + h + w + h / 2, y0 + w + h + h);//C
+        paths[1] = getLBCD(w, h, x0 +  w + h / 2, y0 + h);//B
+        paths[2] = getLBCD(w, h, x0 +  w + h / 2, y0 + w + h + h);//C
         paths[4] = getLBCD(w, h, x0 + h / 2, y0 + w + h + h);//E
         paths[5] = getLBCD(w, h, x0 + h /2, y0 + h);//F
 
