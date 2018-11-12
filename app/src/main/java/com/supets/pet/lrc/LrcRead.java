@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,26 @@ public class LrcRead {
         String Lrc_data = "";
         File mFile = new File(file);// /mnt/sdcard/我不知道爱是什么.lrc
         FileInputStream mFileInputStream = new FileInputStream(mFile);
+        InputStreamReader mInputStreamReader = new InputStreamReader(mFileInputStream, "GB2312");
+        BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
+        while ((Lrc_data = mBufferedReader.readLine()) != null) {//[ti:我不知道爱是什么] ar:艾怡良]
+            Lrc_data = Lrc_data.replace("[", "");// ti:我不知道爱是什么]
+            Lrc_data = Lrc_data.replace("]", "@");// ti:我不知道爱是什么@
+            String splitLrc_data[] = Lrc_data.split("@");// [00:00.00, 我爱歌词网 www.5ilrc.com]split是去掉@并在此处用逗号分隔成两个字符串。最后放到一个数组里。
+            if (splitLrc_data.length > 1) {
+                mLyricContent.setLyric(splitLrc_data[1]);// [00:00.00, 我爱歌词网 www.5ilrc.com],取数组里面的第2个数据作为歌词。
+                int LyricTime = TimeStr(splitLrc_data[0]);// 取数组里面的第1个数据，放到TimeStr里都转成秒为单位后出来作为歌词时间。0 400 9490 12490 15860 15860 35560
+                mLyricContent.setLyricTime(LyricTime);
+                LyricList.add(mLyricContent);
+                mLyricContent = new LyricContent();
+            }
+        }
+        mBufferedReader.close();
+        mInputStreamReader.close();
+    }
+
+    public void Read(InputStream mFileInputStream) throws FileNotFoundException, IOException {
+        String Lrc_data = "";
         InputStreamReader mInputStreamReader = new InputStreamReader(mFileInputStream, "GB2312");
         BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
         while ((Lrc_data = mBufferedReader.readLine()) != null) {//[ti:我不知道爱是什么] ar:艾怡良]

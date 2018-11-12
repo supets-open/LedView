@@ -10,6 +10,14 @@ public class LyricContent {
         this.mLyricContent = lyricContent;
     }
 
+    public String getLyricContent() {
+        return mLyricContent;
+    }
+
+    public int getLyricTime() {
+        return mLyricTime;
+    }
+
     public void setLyricTime(int lyricTime) {
         this.mLyricTime = lyricTime;
     }

@@ -1,5 +1,6 @@
 package com.supets.pet.module.led;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -8,8 +9,11 @@ import android.support.annotation.Nullable;
 import com.supets.pet.bus.BusInfo;
 import com.supets.pet.bus.BusUtils;
 import com.supets.pet.ledview.R;
+import com.supets.pet.lrc.LrcRead;
+import com.supets.pet.lrc.LyricContent;
 import com.supets.pet.view.LedTextView;
 
+import java.io.IOException;
 import java.util.List;
 
 public class BusActivity extends Activity {
@@ -32,6 +36,7 @@ public class BusActivity extends Activity {
         requestData(url);
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void requestData(String url) {
         new AsyncTask<String, Void, List<BusInfo>>() {
 
@@ -50,6 +55,19 @@ public class BusActivity extends Activity {
                     }
                 }
                 time_led.ForceupdateText(sb.toString());
+                try {
+                    LrcRead read = new LrcRead();
+                    read.Read(getResources().openRawResource(R.raw.czt));
+                    sb.setLength(0);
+                    for (LyricContent lyricContent : read.GetLyricContent()){
+                        sb.append(lyricContent.getLyricContent());
+                    }
+                    time_led.ForceupdateText(sb.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
             }
         }.execute(url);
     }

@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.supets.pet.ledview"
         minSdkVersion 16
-        targetSdkVersion 16
+        targetSdkVersion 26
         versionCode 1
         versionName "1.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
