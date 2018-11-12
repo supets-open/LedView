@@ -28,7 +28,7 @@ public class LrcMainActivity extends Activity { //播放状态 暂定或正在�
     private SeekBar mPlaySeekBar; //点击事件
     private MyOnClickListener myOnClickListener = new MyOnClickListener(); //MediaPlayer
     private MediaPlayer mMediaPlayer; //mp3链接 修改成可以播放的就行
-    private String mP3Url = "http://yinyueshiting.baidu.com/data2/music/134380372/30299672000128.mp3?xcode=666f07de58e929ce29676627b54cb918";
+    private String mP3Url = "https://raw.githubusercontent.com/supets-open/LedView/master/app/src/main/res/raw/czt.mp3";
     private Uri uri = null; //定时器 由于功能中有付费播放功能，需要定时器来判断
     private Timer mTimer = null;
     private TimerTask mTimerTask = null; //互斥变量，防止定时器与SeekBar拖动时进度冲突
