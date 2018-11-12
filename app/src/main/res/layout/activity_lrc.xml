@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/player_frame"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@mipmap/bcd">
+
+        <RelativeLayout
+            android:id="@+id/player_title"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="#ABABAB"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:text="标题" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/player_img2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <TextView
+            android:id="@+id/player_warn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="试听已结束"
+            android:textColor="#b00"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/player_control"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"
+            android:background="#ABABAB"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/player_button"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/ic_launcher_round" />
+
+            <TextView
+                android:id="@+id/player_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="8dp"
+                android:textColor="#b00"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/player_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/player_right"
+                android:textColor="#fdd"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/player_seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/player_left"
+                android:layout_toRightOf="@id/player_button" />
+        </RelativeLayout>
+    </FrameLayout>
+</RelativeLayout>
