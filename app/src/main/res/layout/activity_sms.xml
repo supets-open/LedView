@@ -17,17 +17,18 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Ready Go!!! "
+            android:text="2018年10月10日"
             app:scroll="true"
             app:scrollDirection="left"
             app:speed="normal"
-            app:textColor="#ff0000" />
+            app:textColor="#ffde88" />
 
         <com.supets.pet.view.LedTextView
             android:id="@+id/time_led"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
+            android:text="88:88"
             app:scroll="false"
             app:scrollDirection="left"
             app:speed="normal"

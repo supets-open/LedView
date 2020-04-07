@@ -39,8 +39,8 @@ public class LedTextView extends android.support.v7.widget.AppCompatTextView {
     /*
      * 用来调整滚动速度
      */
-    private static int maxsleep = 100;
-    private static int minsleep = 50;
+    private static int maxsleep = 500;
+    private static int minsleep = 100;
 
     private int sleepTime = minsleep;
 

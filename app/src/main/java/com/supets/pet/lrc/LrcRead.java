@@ -44,7 +44,7 @@ public class LrcRead {
 
     public void Read(InputStream mFileInputStream) throws FileNotFoundException, IOException {
         String Lrc_data = "";
-        InputStreamReader mInputStreamReader = new InputStreamReader(mFileInputStream, "GB2312");
+        InputStreamReader mInputStreamReader = new InputStreamReader(mFileInputStream, "UTF-8");
         BufferedReader mBufferedReader = new BufferedReader(mInputStreamReader);
         while ((Lrc_data = mBufferedReader.readLine()) != null) {//[ti:我不知道爱是什么] ar:艾怡良]
             Lrc_data = Lrc_data.replace("[", "");// ti:我不知道爱是什么]

@@ -13,7 +13,6 @@ import com.supets.pet.lrc.LrcRead;
 import com.supets.pet.lrc.LyricContent;
 import com.supets.pet.view.LedTextView;
 
-import java.io.IOException;
 import java.util.List;
 
 public class BusActivity extends Activity {
@@ -57,13 +56,13 @@ public class BusActivity extends Activity {
                 time_led.ForceupdateText(sb.toString());
                 try {
                     LrcRead read = new LrcRead();
-                    read.Read(getResources().openRawResource(R.raw.czt));
+                    read.Read(getAssets().open("test.lrc"));
                     sb.setLength(0);
-                    for (LyricContent lyricContent : read.GetLyricContent()){
+                    for (LyricContent lyricContent : read.GetLyricContent()) {
                         sb.append(lyricContent.getLyricContent());
                     }
                     time_led.ForceupdateText(sb.toString());
-                } catch (IOException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
